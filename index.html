@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wedding Invitation</title>
+    <!-- Font Awesome Icon Library -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f9fa;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+        .invitation {
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        .icon {
+            font-size: 60px;
+            color: #b5651d;
+            margin-bottom: 20px;
+        }
+        h1 {
+            color: #b5651d;
+            margin: 10px 0;
+        }
+        .details {
+            margin: 20px 0;
+            color: #333333;
+        }
+        .map-link {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 20px;
+            font-size: 16px;
+            color: #ffffff;
+            background-color: #007bff;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+        .map-link:hover {
+            background-color: #0056b3;
+        }
+        .footer {
+            margin-top: 20px;
+            font-size: 14px;
+            color: #666666;
+        }
+    </style>
+    <script>
+        function openDirections() {
+            if (navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition((position) => {
+                    const latitude = position.coords.latitude;
+                    const longitude = position.coords.longitude;
+                    const destination = "https://www.grthotels.com/grand-vijayawada/";
+                    const mapsUrl = https://www.google.com/maps/dir/?api=1&origin=${latitude},${longitude}&destination=${encodeURIComponent(destination)};
+                    window.open(mapsUrl, "_blank");
+                }, () => {
+                    alert("Unable to retrieve your location. Please enable location services.");
+                });
+            } else {
+                alert("Geolocation is not supported by your browser.");
+            }
+        }
+    </script>
+</head>
+<body>
+    <div class="invitation">
+        <!-- Wedding Icon -->
+        <div class="icon">
+            <i class="fas fa-heart"></i>
+        </div>
+        <h1>You're Invited!</h1>
+        <p class="details">
+            Join us in celebrating our wedding!<br>
+            <strong>Date:</strong> February 14, 2025<br>
+            <strong>Time:</strong> 5:00 PM<br>
+            <strong>Venue:</strong> GRT Grand, Vijayawada
+        </p>
+        <!-- Button to Get Directions -->
+        <button class="map-link" onclick="openDirections()">Get Directions</button>
+        <div class="footer">
+            We can't wait to celebrate with you! ❤
+        </div>
+    </div>
+</body>
+</html>
+<!-- wedding-invitation.html
+Displaying wedding-invitation.html. -->
